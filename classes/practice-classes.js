@@ -61,7 +61,6 @@ class NPC extends Character {
 
 //CODE HERE
 let ralph = new NPC('Ralph', 'human', 'Niceland', "I'm gonna wreck it!");
-console.log(ralph.getInfo());
 
 /*
     Next you're going to create three variables to store information about Ralph.
@@ -98,6 +97,26 @@ let ralphsLocation = ralph.location;
 */
 
 //CODE HERE
+class Player extends Character {
+  constructor(name, type, healthLevel, attackLevel) {
+    super(name, type);
+    this.healthLevel = healthLevel;
+    this.attackLevel = attackLevel;
+  }
+
+  defend(amount) {
+    this.healthLevel -= amount;
+    if (this.healthLevel > 0) {
+      return {
+        attackStrength: amount,
+        remainingHealth: this.healthLevel,
+        message: `${this.name} is still in the fight!`,
+      };
+    } else {
+      return `${this.name} has been defeated!`;
+    }
+  }
+}
 
 /*
     Next, we'll create two Players.
@@ -108,6 +127,8 @@ let ralphsLocation = ralph.location;
 */
 
 //CODE HERE
+let aang = new Player('Aang', 'airbender', 100, 100);
+let ozai = new Player('Ozai', 'firebender', 100, 0);
 
 /*
     Let's see how a fight between these two would go. 
@@ -117,6 +138,9 @@ let ralphsLocation = ralph.location;
 */
 
 //CODE HERE
+let battle = ozai.defend(aang.attackLevel);
+let player = new Player('Yenza', 'Cloral', 100, 100)
+console.log(player.defend(30))
 
 //////////////////PROBLEM 4////////////////////
 
