@@ -15,7 +15,15 @@
 */
 
 //CODE HERE
-
+class Character {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+  getInfo() {
+    return `This is a ${this.type} character named ${this.name}.`;
+  }
+}
 //////////////////PROBLEM 2////////////////////
 
 /*
@@ -34,12 +42,26 @@
 
 //CODE HERE
 
+class NPC extends Character {
+  constructor(name, type, location, phrase) {
+    super(name, type);
+    this.location = location;
+    this.phrase = phrase;
+  }
+
+  dialogue() {
+    return `${this.name}: ${this.phrase}`;
+  }
+}
+
 /*
     Create an NPC named Ralph who is a human located in Niceland. His phrase should be `I'm gonna wreck it!`. 
     Store your new NPC in a variable called 'ralph'.
 */
 
 //CODE HERE
+let ralph = new NPC('Ralph', 'human', 'Niceland', "I'm gonna wreck it!");
+console.log(ralph.getInfo());
 
 /*
     Next you're going to create three variables to store information about Ralph.
@@ -49,7 +71,9 @@
 */
 
 //CODE HERE
-
+let ralphsInfo = ralph.getInfo();
+let ralphsDialogue = ralph.dialogue();
+let ralphsLocation = ralph.location;
 //////////////////PROBLEM 3////////////////////
 
 /*
