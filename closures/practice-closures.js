@@ -100,16 +100,31 @@ function plantTracker() {
         - hint: try to find the index of the string first
   */
 
-//CODE HERE
+function inventory() {
+  let products = [];
+  return {
+    readProducts: function () {
+      return products;
+    },
+    addToProducts: function (item) {
+      products.push(item);
+      return products;
+    },
+    deleteFromProducts(item) {
+      let index = products.indexOf(item);
+      products.splice(index, 1);
+    },
+  };
+}
 
 /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
   */
 
-//CODE HERE
+let shoes = inventory();
 
 /*
     Add an item to your shoes array using the addToProducts function
   */
 
-//CODE HERE
+shoes.addToProducts('boots');
