@@ -139,8 +139,8 @@ let ozai = new Player('Ozai', 'firebender', 100, 0);
 
 //CODE HERE
 let battle = ozai.defend(aang.attackLevel);
-let player = new Player('Yenza', 'Cloral', 100, 100)
-console.log(player.defend(30))
+let player = new Player('Yenza', 'Cloral', 100, 100);
+console.log(player.defend(30));
 
 //////////////////PROBLEM 4////////////////////
 
@@ -159,6 +159,20 @@ console.log(player.defend(30))
 */
 
 //CODE HERE
+class Hero extends Player {
+  constructor(name, type, attackStrength, attackLevel) {
+    super(name, type, attackStrength, attackLevel);
+    this.superPowers = [];
+  }
+
+  addSuperPower(power) {
+    this.superPowers.push(power);
+  }
+
+  useSuperPower(index) {
+    return `${this.name} used ${this.superPowers[index]}!`;
+  }
+}
 
 /*
   Create a hero named 'Fire Spitter' whose type is 'dragon'. 
@@ -170,3 +184,8 @@ console.log(player.defend(30))
 */
 
 //CODE HERE
+let fireSpitter = new Hero('Fire Spitter', 'dragon', 5000, 5000);
+fireSpitter.addSuperPower('spitting fire');
+fireSpitter.addSuperPower('fly');
+fireSpitter.addSuperPower('Roar');
+let fireSpitterAttack = fireSpitter.useSuperPower(0);
