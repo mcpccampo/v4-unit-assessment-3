@@ -70,6 +70,23 @@ bathroomSwitch();
   */
 
 //CODE HERE
+function plantTracker() {
+  let plant = 'fern';
+  let height = 12;
+  return {
+    readInfo: function () {
+      return `This is a ${plant} plant that is ${height} inches tall.`;
+    },
+    waterPlant: function () {
+      height += 1;
+      return height;
+    },
+    prunePlant: function () {
+      height -= 1;
+      return height;
+    },
+  };
+}
 
 ////////////PROBLEM 4////////////
 
