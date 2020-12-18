@@ -32,7 +32,7 @@ class SearchBar extends Component {
           value={this.state.search}
         ></input>
         <button onClick={() => this.props.getSearch(this.state.search)}>Search</button>
-        <button onClick={this.clearSearch}>Clear Search</button>
+        <button onClick={() => this.clearSearch()}>Clear Search</button>
       </div>
     );
   }

@@ -38,6 +38,7 @@ class App extends Component {
         <h1> APP </h1>
         <Header />
         <SearchBar getSearch={this.setSearch} clearSearch={this.clearBookShelf} />
+        <Shelf data={this.state.data} bookShelf={this.state.bookShelf} />
       </div>
     );
   }
